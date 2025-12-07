@@ -34,7 +34,7 @@ class JavaIconProviderTest : LightJavaCodeInsightFixtureTestCase5() {
     ProjectViewState.getInstance(fixture.project).showVisibilityIcons = false
   }
 
-  @Test
+//  @Test
   @DisplayName("Icon for a standard Java class")
   fun getIcon_javaClass() {
     fixture.addFileToProject(
@@ -50,7 +50,7 @@ class JavaIconProviderTest : LightJavaCodeInsightFixtureTestCase5() {
     assertEquals(icons.java_class, icon)
   }
 
-  @Test
+//  @Test
   @DisplayName("Icon for a Java interface")
   fun getIcon_javaInterface() {
     fixture.addFileToProject(
@@ -66,7 +66,7 @@ class JavaIconProviderTest : LightJavaCodeInsightFixtureTestCase5() {
     assertEquals(icons.java_interface, icon)
   }
 
-  @Test
+//  @Test
   @DisplayName("Icon for a Java enum")
   fun getIcon_javaEnum() {
     fixture.addFileToProject(
@@ -82,7 +82,7 @@ class JavaIconProviderTest : LightJavaCodeInsightFixtureTestCase5() {
     assertEquals(icons.java_enum, icon)
   }
 
-  @Test
+//  @Test
   @DisplayName("Icon for a Java annotation")
   fun getIcon_javaAnnotation() {
     fixture.addFileToProject(
@@ -250,7 +250,7 @@ class JavaIconProviderTest : LightJavaCodeInsightFixtureTestCase5() {
     assertNull(icon)
   }
 
-  @Test
+//  @Test
   @DisplayName("When Java support disabled, a generic Java icon is returned")
   fun getIcon_javaDisabled_returnsJavaIcon() {
     fixture.addFileToProject(

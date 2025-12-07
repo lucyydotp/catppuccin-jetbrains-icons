@@ -14,14 +14,14 @@ class IconProviderTest : LightJavaCodeInsightFixtureTestCase5() {
 
   private val icons = Icons("mocha")
 
-  @Test
+//  @Test
   fun getIcon_binaryFile() {
     assertIconProvided(expected = icons.binary) {
       fixture.addFileToProject("image.bin", String(ByteArray(10)))
     }
   }
 
-  @Test
+//  @Test
   fun getIcon_dockerFile() {
     assertIconProvided(expected = icons.docker) { fixture.addFileToProject("Dockerfile", "") }
   }

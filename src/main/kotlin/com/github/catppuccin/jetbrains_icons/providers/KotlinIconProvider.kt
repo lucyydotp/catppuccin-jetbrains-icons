@@ -6,8 +6,11 @@ import com.intellij.icons.AllIcons
 import com.intellij.ide.IconProvider
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.psi.PsiElement
+import com.intellij.psi.PsiFile
 import com.intellij.psi.util.InheritanceUtil
 import com.intellij.psi.util.PsiUtil
+import com.intellij.psi.util.PsiUtilCore
+import com.intellij.psi.util.childrenOfType
 import com.intellij.ui.LayeredIcon
 import com.intellij.util.IconUtil
 import icons.KotlinBaseResourcesIcons
@@ -17,6 +20,7 @@ import org.jetbrains.kotlin.idea.refactoring.isInterfaceClass
 import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtClassOrObject
+import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtModifierList
 import org.jetbrains.kotlin.psi.KtObjectDeclaration
 import org.jetbrains.kotlin.util.isOrdinaryClass
@@ -28,11 +32,14 @@ import javax.swing.Icon
  */
 class KotlinIconProvider : IconProvider() {
 
-  private val logger = Logger.getInstance(this::class.java)
-
   override fun getIcon(p0: PsiElement, p1: Int): Icon? {
-
-    if (p0 !is KtClassOrObject) return null
+    if (p0 is KtFile) {
+      val elements = p0.childrenOfType<KtClassOrObject>()
+      if (elements.size != 1) return icons.kotlin
+      return getIcon(elements.first(), p1)
+    }
+    if (p0 !is KtClassOrObject)
+      return if (PsiUtilCore.getVirtualFile(p0)?.name?.endsWith(".kt") == true) icons.kotlin else null
 
     return getElement(p0)?.let {
       LayeredIcon(2).apply {

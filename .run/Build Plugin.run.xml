@@ -1,10 +1,16 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Build Plugin" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="JAVA_HOME" value="$USER_HOME$/.local/share/mise/installs/java/temurin-21.0.9+10.0.LTS" />
+          <entry key="PATH" value="$USER_HOME$/.local/share/mise/installs/bun/1.3.3/bin:$USER_HOME$/.local/share/mise/installs/java/temurin-21.0.9+10.0.LTS/bin:$USER_HOME$/.local/share/mise/installs/node/24.11.1/bin:$USER_HOME$/.local/share/mise/installs/pnpm/10.23.0:$USER_HOME$/.local/share/mise/installs/yarn/1.22.22/bin:$USER_HOME$/.krew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:$USER_HOME$/Library/Application Support/JetBrains/Toolbox/scripts" />
+        </map>
+      </option>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />
       <option name="externalSystemIdString" value="GRADLE" />
-      <option name="scriptParameters" value="" />
+      <option name="scriptParameters" value="--stacktrace" />
       <option name="taskDescriptions">
         <list />
       </option>
@@ -17,10 +23,11 @@
     </ExternalSystemSettings>
     <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+    <EXTENSION ID="com.intellij.execution.ExternalSystemRunConfigurationJavaExtension">
+      <extension name="com.github.l34130.mise.core.run.MiseRunConfigurationSettingsEditor" myConfigEnvironmentStrategy="use_project_settings" myMiseDirEnvCb="false" myMiseConfigEnvironmentTf="" />
+    </EXTENSION>
     <DebugAllEnabled>false</DebugAllEnabled>
     <RunAsTest>false</RunAsTest>
-    <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Generate Icons" run_configuration_type="js.build_tools.npm" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>

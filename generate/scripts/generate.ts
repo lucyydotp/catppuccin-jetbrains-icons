@@ -35,7 +35,7 @@ function generateExtensionsToIcons(file: string) {
 
 // VSCode sometimes doesn't need the `fileExtension` block to be populated but that affects JetBrains so we can add our
 // own extensions/overrides here if need be.
-const customFileExtensions = {razor: "razor"}
+const customFileExtensions = {razor: "razor", 'gradle.kts': 'gradle'}
 const extendedFileExtensions = {...fileExtensions, ...customFileExtensions}
 
 function generateIconsKt() {
